@@ -1,0 +1,73 @@
+mixin make_index_post(posts)
+  each post in posts.sort("date", -1).limit(10).toArray()
+    #index-post-container
+      #date-category
+        div(class="p-in-date")
+          span= time(post.date, "YYYY-MM-DD")
+        div(class="p-in-cate")
+          if post.categories.toArray().length > 0
+            - var categoryArr = post.categories.toArray();
+            div(class="ui button")= categoryArr[0].name
+          else
+            div(class="ui button")= __("Default_category")
+        div(class="p-in-cate")
+          if post.tags.toArray().length > 0
+            - var tagArr = post.tags.toArray();
+              div(class="ui button")= tagArr[0].name
+          else
+            div(class="ui button")= __("Default_tag")
+      #heart
+        i(class=("heart theme-color-pink icon"))
+      #title-excerpt
+        #title
+          a(href=url_for(post.path))= theme.postTitlePrefix + " " + (post.title || __("No_title_post"))
+        if post.excerpt
+          #excerpt
+            p= strip_html(post.excerpt)
+    div(class="post-bottom-line") &nbsp;
+
+mixin make_pagination()
+  #pagination-container
+    div(class="ui secondary menu")
+      #paginator!= paginator({prev_text: __("Prev"), next_text: __("Next"), page_class: "item", current_class: "active item", prev_class: "item", next_class: "item"})
+
+mixin make_category_post(categories)
+  each category in categories
+    div(style="margin-top: 25px")
+      span
+        i(class="folder icon")
+        = __(category.category)
+      - let posts = category.posts;
+      table(class="ui table")
+        tbody
+          each post in posts
+            if post && post.path
+              tr
+                td
+                  a(href=url_for(post.path), style="font-size: 15px; color: black; opacity: .7")
+                    = post.title || __("No_title_post")
+                td(style="text-align: right")
+                  span= time(post.date, "YYYY-MM-DD")    
+    
+mixin make_archives_post(yearMonthPosts)
+  each year in yearMonthPosts
+    div(style="margin-top: 20px")
+      span
+        i(class="calendar alternate outline icon")
+        = year.year
+      each month in year.children
+        div(style="padding-left: 20px; margin-top: 12px")
+          span(style="font-size: 15px")
+            i(class="calendar check outline icon")
+            = month.month
+            - let posts = month.posts;
+            table(class="ui table")
+              tbody
+                each post in posts
+                  tr
+                    td
+                      a(href=url_for(post.path), style="font-size: 15px; color: black; opacity: .7")
+                        = post.title || __("No_title_post")
+                    td(style="text-align: right")
+                      span= time(post.date, "YYYY-MM-DD")    
+    

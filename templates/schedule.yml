@@ -1,0 +1,25 @@
+- taskName: 学习Java编程
+  startDate: "2020-01-01"
+  planEndDate: "2020-12-01"
+  progress: 60
+  endDate: "2020-12-01"
+- taskName: 换一个新工作
+  startDate: "2020-02-01"
+  planEndDate: "2020-04-11"
+  progress: 20
+  endDate: "2020-08-01"
+- taskName: 减肥30斤
+  startDate: "2021-08-01"
+  planEndDate: "2021-11-18"
+  progress: 90
+  endDate: "2021-12-01"
+- taskName: 去看一次东京塔🗼
+  startDate: "2023-01-01"
+  planEndDate: "2024-11-09"
+  progress: 30
+  endDate: "2024-12-01"
+- taskName: 寻找地外文明
+  startDate: "2023-01-01"
+  planEndDate: "2049-08-22"
+  progress: 5
+  endDate:

@@ -1,0 +1,26 @@
+#footer-container
+  #footer-content
+    div(class="footer-row")
+      each url, label in theme.social
+        if label != "mail"
+          a(href=url, target="_blank")
+            i(class=["black icon", label], style="font-size: 28px")
+        else
+          a(href="mailto: " + url, target="_blank")
+            i(class=["black icon", label], style="font-size: 28px")
+    div(class="footer-row")
+      - let copyrightInfo = getCopyright(theme.startDate, theme.author);
+      span= copyrightInfo
+      |
+      |
+      span= __("Copyright_reserved")
+    div(class="footer-row")
+      span Powered by
+      |
+      |
+      a(href="https://hexo.io", target="_blank") Hexo
+      |
+      | &
+      |
+      a(href="https://github.com/lozhu20/hexo-theme-honeyworks", target="_blank", style="color: #e5307d")
+       = "hexo-theme-honeyworks"

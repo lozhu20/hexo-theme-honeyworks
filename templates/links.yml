@@ -1,0 +1,53 @@
+- categoryName: 推荐个人博客
+  links:
+    - siteName: 贝贝主页
+      description: 非常实用的B站视频下载工具网站
+      url: https://xbeibeix.com/api/bilibili/
+    - siteName: 廖雪峰的个人博客
+      description: git 教程写得很赞！
+      url: https://baidu.com
+    - siteName: 阮大佬的个人博客
+      description: 非常有名的个人博客！
+      url: https://baidu.com
+    - siteName: Semantic UI
+      description: User Interface is the language of the web
+      url: https://semantic-ui.com
+- categoryName: 实用工具网站
+  links:
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com
+- categoryName: 各种教程
+  links:
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com
+- categoryName: 常用网站
+  links:
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com
+    - siteName: Spaceship
+      description: 世界知名的域名经销商
+      url: https://baidu.com

@@ -1,0 +1,13 @@
+#search
+  #search-form(class="ui small modal")
+    div(class="header")= __("Local_search")
+    div(class="content")
+      form(class="ui form")
+        div(class="field")
+          label= __("Search_content")
+          input(type="text", id="local-search-input", name="local-search-input")
+      #local-search-result
+    div(class="actions")
+      div(class="ui basic button", onclick="closeSearchForm();")
+        i(class="cancel icon")
+        span= __("Close")

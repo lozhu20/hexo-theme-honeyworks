@@ -1,0 +1,48 @@
+- var pageTitle = page.title || config.subtitle || ''
+- if (is_archive()) pageTitle = 'Archives'
+- if (is_tag()) pageTitle = 'Tag: ' + page.tag
+- if (is_category()) pageTitle = 'Category: ' + page.category
+- if (is_month()) pageTitle += ': ' + page.month + '/' + page.year
+- if (is_year()) pageTitle += ': ' + page.year
+- if (is_current("categories")) pageTitle = 'Categories'
+- if (is_current("tags")) pageTitle = 'Tags'
+- if (is_current("reading")) pageTitle = 'Reading'
+- if (is_current("schedule")) pageTitle = 'Schedule'
+- if (is_current("links")) pageTitle = 'Links'
+- if (is_current("about")) pageTitle = 'About'
+- pageTitle += ' | ' + theme.title + '的博客'
+
+doctype html
+html(lang=theme.language)
+  head
+    meta(charset='UTF-8')
+    title= pageTitle
+    if theme.stylesheets !== undefined && theme.stylesheets.length > 0
+      //- stylesheets list from _config.yml
+      each url in theme.stylesheets
+        link(rel='stylesheet', href=url)
+  body
+    // 菜单导航栏
+    include nav
+    #content-container
+      #content
+        if body
+          div!= body
+        else
+          block content
+    // footer
+    include footer
+    include config
+    include search
+    if theme.scripts !== undefined && theme.scripts.length > 0
+      //- scripts list from config.yml
+      each url in theme.scripts
+        script(src=url)
+    script.
+      $('.progress-bar').progress();
+      hljs.initHighlightingOnLoad();
+      renderTable();
+    //- 站内搜索功能
+    script.
+      var searchPath = window.CONFIG.searchPath;
+      searchFunc(searchPath, 'local-search-input', 'local-search-result');

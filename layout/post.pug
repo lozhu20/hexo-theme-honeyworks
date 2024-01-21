@@ -1,0 +1,31 @@
+extends includes/layout.pug
+
+block content
+  article#post
+    h1= page.title || __("No_title_post")
+    if page.date
+      p= time(page.date, "YYYY-MM-DD HH:MM:SS")
+    - let categories = page.categories.toArray();
+    if categories.length > 0
+      each category in categories
+        //- div(class="ui basic pink button", style="margin-bottom: 10px")
+        span(style="margin-right: 12px")
+          i(class="folder icon")
+          = category.name
+    - let tags = page.tags.toArray();
+    if tags.length > 0
+      // 间隔
+      each tag in tags
+        //- div(class="ui basic button", style="margin-bottom: 10px")
+        span(style="margin-right: 12px")
+          i(class="tag icon")
+          = tag.name
+    //- 文件头图片处理
+    - let photos = page.photos;
+    if photos.length > 0
+      each photo in photos
+        div
+          img(class="ui image", src=photo)
+    div(class="ui divider")
+    != page.content
+

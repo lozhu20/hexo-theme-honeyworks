@@ -1,0 +1,45 @@
+- bookName: Java并发编程指南
+  bookCover:
+  bookAuthor: "[美] 祝龙坤"
+  readingState: 已完成
+  finishDate:
+- bookName: 冬牧场
+  bookCover:
+  bookAuthor: "李娟"
+  readingState: 想读
+  finishDate: "2024-11-01"
+- bookName: 当你老了
+  bookCover:
+  bookAuthor: "W.B.叶芝"
+  readingState: 在读
+  finishDate: "2024-02-01"
+- bookName: Java并发编程指南
+  bookCover:
+  bookAuthor: "[美] 祝龙坤"
+  readingState: 已完成
+  finishDate: "2023-01-01"
+- bookName: 冬牧场
+  bookCover:
+  bookAuthor: "李娟"
+  readingState: 在读
+  finishDate: "2024-11-01"
+- bookName: 当你老了
+  bookCover:
+  bookAuthor: "W.B.叶芝"
+  readingState: 在读
+  finishDate: "2024-02-01"
+- bookName: Java并发编程指南
+  bookCover:
+  bookAuthor: "[美] 祝龙坤"
+  readingState: 已完成
+  finishDate: "2023-01-01"
+- bookName: 冬牧场
+  bookCover:
+  bookAuthor: "李娟"
+  readingState: 在读
+  finishDate: "2024-11-01"
+- bookName: 当你老了
+  bookCover:
+  bookAuthor: "W.B.叶芝"
+  readingState: 在读
+  finishDate: "2024-02-01"

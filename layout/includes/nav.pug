@@ -1,0 +1,19 @@
+#nav-container
+  nav#nav-content
+    div(class="ui secondary menu")
+      - let count = 0;
+      each url, label in theme.menu
+        - count += 1;
+        a(href=url_for(url), class="item")= __(label)
+          if count === Object.keys(theme.menu).length
+            if theme.tools.back.enable || theme.tools.darkmode.enable || theme.tools.search.enable
+              div(class="right menu")
+                if theme.tools.back.enable && is_post()
+                  a(href="javascript:void(0);", onclick="back();", class="ui item")
+                    i(class="icon angle left")
+                if theme.tools.darkmode.enable
+                  a(href="#", class="ui item")
+                    i(class="icon sun")
+                if theme.tools.search.enable
+                  a(href="javascript:void(0);", class="ui item", onclick="showSearchForm();")
+                    i(class="icon search")

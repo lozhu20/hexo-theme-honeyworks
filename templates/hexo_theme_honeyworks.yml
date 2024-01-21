@@ -1,0 +1,60 @@
+# html lang
+# language: en
+title: 快乐猪的博客
+author: 快乐猪
+language: zh-cn
+
+# main menu navigation
+menu:
+  Home: /
+  Categories: /categories
+  Archives: /archives
+  Reading: /reading
+  Schedule: /schedule
+  Links: /links
+  About: /about
+
+# topbar tools
+tools:
+  back:
+    enable: true
+  darkmode:
+    enable: true
+  search:
+    enable: true
+
+# social links
+social:
+  github: https://github.com
+  twitter: https://baidu.com
+  instagram: https://instagram.com
+  weibo: https://weibo.com
+  mail: mimetic-lulls.02@icloud.com
+
+startDate: 2019-01-01
+
+defaultBookCover: /assets/default-book-cover.jpeg
+
+postTitlePrefix: "┗|∵|┓"
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  template: search.xml
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /css/hexo-theme-honeyworks.css
+- /css/semantic.css
+- /css/github.min.css
+# - https://cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css
+
+# scripts loaded in the end of the body
+scripts:
+- https://code.jquery.com/jquery-3.7.0.min.js
+- /js/hexo-theme-honeyworks.js
+- /js/semantic.js
+- /js/highlight.min.js
+- /js/search.js
+# - https://cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js

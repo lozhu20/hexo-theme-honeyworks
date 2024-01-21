@@ -1,0 +1,24 @@
+extends includes/layout.pug
+
+block content
+  #schedule
+    - let tasks = site.data.schedule;
+    - let endYears = Array.from(new Set(tasks.map(e => e.planEndDate.substring(0, 4)))).sort().reverse();
+    each year in endYears
+      div(style="margin: 0 0 15px 0")
+        div(class="ui pink basic large button")
+          i(class="calendar check outline icon")
+          = year
+      each task in tasks
+        if task.planEndDate.substring(0, 4) === year
+          div(style="margin-bottom: 3rem")
+            div(class="ui indicating progress progress-bar", data-percent=task.progress)
+              div(class="bar")
+                div(class="progress")
+              div(class="label", style="width: unset")
+                if task.endDate
+                  span=task.taskName + " > (已于 " + task.endDate + " 完成)"
+                else
+                  span=task.taskName + " > (计划于 " + task.planEndDate + " 完成)"
+      div(class="blank-line") &nbsp;
+      

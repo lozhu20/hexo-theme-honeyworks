@@ -1,0 +1,26 @@
+extends includes/layout.pug
+
+block content
+  #category
+    //- 分类列表
+    - let categories = site.categories.sort('name', 1).toArray();
+    #category-list
+      - var categoryPostAll = 0;
+      each category in categories
+        - categoryPostAll += category.posts.length;
+      // 展示所有的按钮
+      div(class="ui labeled button", style="margin-right: 15px")
+          button(class="ui red button", onclick="filterCategory()")
+            i(class="heart icon")
+            = __("All")
+          span(class="ui basic red left pointing label")= categoryPostAll
+      each category in categories
+        div(class="ui labeled button", style="margin-right: 15px")
+          button(class="ui red button", onclick="filterCategory()")
+            i(class="heart icon")
+            = category.name
+          span(class="ui basic red left pointing label")= category.posts.length
+    //- 分类下文章列表
+    #category-post-list
+      include mixins
+      +make_category_post(categories)

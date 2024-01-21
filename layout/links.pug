@@ -1,0 +1,25 @@
+extends includes/layout.pug
+
+block content
+  #links
+    - let links = site.data.links
+    each category in links
+      #links-category
+        div(class="ui pink basic medium button")
+          i(class="heart pink icon")
+          = category.categoryName
+        div(class="ui grid", style="margin-top: 2px")
+          each link in category.links
+            div(class="four wide column")
+              div(class="ui cards", style="min-width: 250px")
+                div(class="card")
+                  div(class="content")
+                    div(class="header")
+                      span= link.siteName
+                    div(class="meta", style="margin-top: 8px;")= link.description
+                    //- div(class="decription", style="margin-top: 6px;")
+                      span(style="opacity: .6")
+                        = link.description
+                  div(class="extra content")
+                    a(href=link.url, class="ui basic mini button")
+                      i(class="right arrow icon")

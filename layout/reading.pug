@@ -1,0 +1,28 @@
+extends includes/layout.pug
+
+block content
+  #reading
+    - let books = site.data.books
+    div(class="ui grid")
+      each book in books
+        div(class="four wide column")
+          div(class="ui card")
+            div(class="image")
+              if book.bookCover
+                img(src=book.bookCover)
+              else
+                img(src=theme.defaultBookCover, style="max-height: 350px")
+            div(class="content")
+              h4(class="ui header")
+                = book.bookName
+              div(class="meta")
+                div(class="date", style="margin-top: 5px")= book.bookAuthor
+              div(class="description")= book.finishDate || "future"
+            div(class="extra content")
+              if book.readingState === "想读"
+                i(class="heart pink icon")
+              else if book.readingState === "在读"
+                i(class="sync alternate yellow icon")
+              else
+                i(class="check green icon")
+              = __(book.readingState)

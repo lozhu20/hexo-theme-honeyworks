@@ -1,0 +1,57 @@
+extends includes/layout.pug
+
+block content
+  #archive
+    - let results = []
+    - let posts = site.posts.sort('date', -1).toArray();
+    each post in posts
+      - let month = time(post.date, "YYYY-MM");
+      - let year = time(post.date, "YYYY");
+      - let years = results.map(e => e.year);
+      if years.indexOf(year) === -1
+        - let yearItem = {"year": year, children: [{"month": month, "posts": [post]}]};
+        - results.push(yearItem);
+      else
+        each yearItem in results
+          if yearItem.year === year
+            - let children = yearItem.children;
+            - let months = children.map(e => e.month);
+            if months.indexOf(month) === -1
+              - let monthItem = {"month": month, "posts": [post]};
+              - children.push(monthItem);
+            else
+              each item in children
+                if item.month === month
+                  - item.posts.push(post);
+    div(class="ui labeled button", style="margin-right: 15px")
+      button(class="ui pink button")
+        i(class="edit icon")
+        = __("All")
+      span(class="ui basic pink left pointing label")= site.posts.length
+    each item in results
+      - let postCount = 0;
+      each month in item.children
+        - postCount += month.posts.length
+      div(class="ui labeled button", style="margin-right: 15px")
+        button(class="ui pink button")
+          i(class="edit icon")
+          = item.year
+        span(class="ui basic pink left pointing label")= postCount
+    include mixins
+    +make_archives_post(results)
+
+//- [
+//-   {
+//-     "year": "2024",
+//-     "children": [
+//-       {
+//-         "month": "2023-01",
+//-         "posts": ["post-1", "post-2"]
+//-       },
+//-       {
+//-         "month": "2023-02",
+//-         "posts": ["post-2", "post-4"]
+//-       }
+//-     ]
+//-   }
+//- ]

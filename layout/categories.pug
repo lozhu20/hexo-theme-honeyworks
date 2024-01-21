@@ -1,0 +1,57 @@
+extends includes/layout.pug
+
+block content
+  #category
+    //- 分类列表
+    //- - let categories = site.categories.sort('name', 1).toArray();
+    - posts = site.posts.toArray();
+    - let results = [];
+    each post in posts
+      - let pushedCategoryNames = results.map(e => e.category)
+      if post.categories && post.categories.length > 0
+        - let categoryNames = Array.from(new Set(post.categories.toArray().map(e => e.name)));
+        each categoryName in categoryNames
+          if pushedCategoryNames.indexOf(categoryName) === -1
+            - results.push({"category": categoryName, "posts": [post]});
+          else
+            each pushedItem in results
+              if pushedItem.category === categoryName
+                - pushedItem.posts.push(post);
+      else
+        if pushedCategoryNames.indexOf("Default_category") === -1
+          - results.push({category: "Default_category", "posts": [post]});
+        else
+          each pushedItem in results
+            if pushedItem.category === "Default_category"
+              - pushedItem.posts.push(post);
+    #category-list
+      - var categoryPostAll = 0;
+      each category in results
+        - categoryPostAll += category.posts.length
+      // 展示所有的按钮
+      div(class="ui labeled button", style="margin-right: 15px")
+          div(class=("ui pink button"))
+            i(class="edit icon")
+            = __("All")
+          span(class="ui basic pink left pointing label")= categoryPostAll
+      each category in results
+        div(class="ui labeled button", style="margin-right: 15px")
+          div(class="ui pink button")
+            i(class="edit icon")
+            = __(category.category)
+          span(class="ui basic pink left pointing label")= category.posts.length
+    //- 分类下文章列表
+    #category-post-list
+      include mixins
+      +make_category_post(results)
+
+//- [
+//-   {
+//-     "category": "分类1",
+//-     "posts": ["post-1", "post-2"]
+//-   },
+//-   {
+//-     "category": "分类1",
+//-     "posts": ["post-1", "post-2"]
+//-   }
+//- ]

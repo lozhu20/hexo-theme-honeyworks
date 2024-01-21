@@ -1,0 +1,292 @@
+:root {
+  --theme-color-pink: #e5307d;
+}
+
+.theme-color-pink {
+  color: var(--theme-color-pink);
+}
+
+* {
+  transition: ease-in .4s !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+a {
+  opacity: .8;
+  letter-spacing: 0.04rem;
+}
+
+a:hover {
+  opacity: .6 !important;
+}
+
+span,
+p,
+li,
+a {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-1%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#nav-container {
+  width: 100%;
+  height: 80px;
+  min-width: 1100px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+}
+
+#nav-content {
+  width: 70%;
+  height: 100%;
+  margin-left: 15%;
+  word-wrap: break-word;
+}
+
+#nav-content .ui.secondary.menu {
+  height: 100%;
+}
+
+#nav-content a {
+  font-size: 17px;
+  font-weight: bold;
+  opacity: .8;
+}
+
+#footer-container {
+  width: 100%;
+  height: auto;
+  margin: 30px 0 30px 0 ;
+  text-align: center;
+  animation: fadeInAnimation ease-in-out .4s;
+}
+
+#footer-content {
+  height: 100%;
+  padding-bottom: 30px;
+}
+
+.footer-row {
+  padding: 8px 0;
+}
+
+.footer-row a {
+  margin: 0 8px;
+}
+
+.footer-row span {
+  opacity: .5;
+  font-size: 15px;
+}
+
+#content-container {
+  width: 100%;
+  height: auto;
+  margin: 90px 0 0 0;
+  z-index: -1;
+  animation: fadeInAnimation ease-in-out .4s;
+}
+
+#content {
+  width: 70%;
+  margin: 0 15%;
+  padding: 10px 16px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* 首页文章列表展示 */
+#index-post-container {
+  /* margin: 15px 0; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.post-bottom-line {
+  background: linear-gradient(
+    90deg, #a2a2a2, #a2a2a2 3px, rgba(255, 255, 255, 0) 3px, rgba(255, 255, 255, 0) 6px
+  );
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+  margin: 15px 0 10px 0;
+}
+
+.blank-line {
+  background-size: 1px 1px;
+  margin: 1px 0;
+}
+
+.p-in-date {
+  opacity: .7;
+  letter-spacing: 0.1rem;
+  white-space: nowrap;
+}
+
+.p-in-cate {
+  margin-top: 2px;
+  padding: 3px 3px;
+}
+
+.p-in-cate .button {
+  min-width: 90px;
+  background-color: #e2e2e2;
+}
+
+#date-category {
+  display: flex;
+  flex-direction: column;
+  word-break: keep-all;
+}
+
+#date-category div {
+  text-align: center;
+}
+
+#date-category .ui.button {
+  /* word-break: keep-all; */
+  padding: 5px 7px;
+  border-radius: 15px;
+  font-weight: normal;
+}
+
+#heart {
+  margin: 0 16px;
+  font-size: 16px;
+}
+
+#title-excerpt {
+  vertical-align: middle;
+  height: 100%;
+}
+
+#title {
+  font-size: 16px;
+  font-weight: bold;
+  width: auto;
+  display: inline-block;
+  position: relative;
+}
+
+#title::before {
+  content: '';
+  width: 0;
+  height: 10px;
+  position: absolute;
+  background-color: rgb(247, 178, 208);
+  z-index: -1;
+}
+
+#title::before {
+  left: 3px;
+  bottom: 0;
+}
+
+#title:hover::before {
+  width: 100%;
+  transition: width .5s ease;
+}
+
+#title a {
+  font-size: 100%;
+  color: inherit;
+  opacity: .9;
+  font-weight: 700;
+}
+
+#excerpt {
+  padding-top: 15px;
+  opacity: .7;
+}
+
+#paginator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+}
+
+#pagination-container {
+  width: 100%;
+  margin: 20px 0 0 0;
+}
+
+/* 分类页面样式 */
+#category-post-list {
+  margin-top: 25px;
+}
+
+figure {
+  background-color: rgb(248, 248, 248);
+  margin: 15px 0 !important;
+  padding: 0 12px;
+  width: 100%;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+figure code {
+  background-color: rgb(248, 248, 248) !important;
+}
+
+/* 阅读页面 */
+
+/* 友链页面 */
+#links-category {
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 100% !important;
+  /* margin: 10px 0 !important; */
+}
+
+iframe {
+  width: 100%;
+  min-height: 650px;
+  margin: 0 0 10px 0;
+}
+
+.ui.pink.buttons .button, .ui.pink.button {
+  background-color: var(--theme-color-pink) !important;
+}
+
+article * {
+  line-height: 2rem;
+}
+
+article {
+  padding-bottom: 15px;
+}
