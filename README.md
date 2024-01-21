@@ -159,6 +159,10 @@ highlight:
 
 开发中，先支持 git talk。
 
+## 暗黑模式
+
+开发中。
+
 ## 致谢
 
 **[template engine - pug](https://pugjs.org/api/getting-started.html)**
