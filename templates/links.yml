@@ -1,53 +1,21 @@
 - categoryName: 推荐个人博客
   links:
-    - siteName: 贝贝主页
-      description: 非常实用的B站视频下载工具网站
-      url: https://xbeibeix.com/api/bilibili/
-    - siteName: 廖雪峰的个人博客
-      description: git 教程写得很赞！
-      url: https://baidu.com
-    - siteName: 阮大佬的个人博客
-      description: 非常有名的个人博客！
-      url: https://baidu.com
+    - siteName: 云泥的网络日志
+      description: 乐于分享的前端大佬
+      url: https://liuyib.github.io
+    - siteName: smile-yan
+      description: 乐于分享、粉丝众多的前端大佬
+      url: https://smileyan.blog.csdn.net
+- categoryName: UI 组件库
+  links:
     - siteName: Semantic UI
       description: User Interface is the language of the web
       url: https://semantic-ui.com
-- categoryName: 实用工具网站
+    - siteName: Bootstrap
+      description: 强大的响应式UI组件库
+      url: https://getbootstrap.com
+- categoryName: 其他
   links:
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
-- categoryName: 各种教程
-  links:
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
-- categoryName: 常用网站
-  links:
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
-    - siteName: Spaceship
-      description: 世界知名的域名经销商
-      url: https://baidu.com
+    - siteName: 快乐猪的博客
+      description: 喜欢写CSS的Java开发
+      url: https://coding.happy365.day

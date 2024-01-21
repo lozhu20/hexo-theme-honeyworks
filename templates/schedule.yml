@@ -3,7 +3,7 @@
   planEndDate: "2020-12-01"
   progress: 60
   endDate: "2020-12-01"
-- taskName: 换一个新工作
+- taskName: 换一份新工作
   startDate: "2020-02-01"
   planEndDate: "2020-04-11"
   progress: 20
@@ -18,7 +18,7 @@
   planEndDate: "2024-11-09"
   progress: 30
   endDate: "2024-12-01"
-- taskName: 寻找地外文明
+- taskName: 与外星人取得联系
   startDate: "2023-01-01"
   planEndDate: "2049-08-22"
   progress: 5

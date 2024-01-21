@@ -23,3 +23,7 @@ function showSearchForm() {
 function closeSearchForm() {
   $(".ui.modal").modal("hide");
 }
+
+function showDevelopingMessage() {
+  alert(window.CONFIG.developingMessage);
+}
